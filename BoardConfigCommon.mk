@@ -63,6 +63,10 @@ TARGET_USES_QCOM_LPA := true
 BOARD_HAVE_BLUETOOTH := true
 TARGET_CUSTOM_BLUEDROID := ../../../device/htc/msm8960-common/bluetooth/bluetooth.c
 
+# Camera HAL support
+BUILD_EMULATOR_CAMERA_HAL := false
+COMMON_GLOBAL_CFLAGS += -DUSE_GET_VIDEO_BUFFER
+
 # FM radio
 #BOARD_HAVE_FM_RADIO := true
 #BOARD_GLOBAL_CFAGS += -DHAVE_FM_RADIO
