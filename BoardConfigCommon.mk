@@ -63,6 +63,7 @@ BOARD_HAVE_BLUETOOTH := true
 TARGET_CUSTOM_BLUEDROID := ../../../device/htc/msm8960-common/bluetooth/bluetooth.c
 
 # Camera
+BOARD_CAMERA_USE_MM_HEAP := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
 
