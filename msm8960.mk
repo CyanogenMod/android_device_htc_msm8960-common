@@ -120,11 +120,20 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
     device/htc/msm8960-common/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw
 
+# Wifi Module
+PRODUCT_COPY_FILES += \
+    device/htc/msm8960-common/modules/prima_wlan.ko:/system/lib/modules/prima_wlan.ko
+
 # Wifi firmware
 PRODUCT_COPY_FILES += \
-    device/htc/msm8960-common/firmware/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/htc/msm8960-common/firmware/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    device/htc/msm8960-common/firmware/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b00:/system/etc/firmware/wcnss.b00 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b01:/system/etc/firmware/wcnss.b01 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b02:/system/etc/firmware/wcnss.b02 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b04:/system/etc/firmware/wcnss.b04 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.mdt:/system/etc/firmware/wcnss.mdt \
+    device/htc/msm8960-common/firmware/wcnss/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/htc/msm8960-common/firmware/wcnss/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    device/htc/msm8960-common/firmware/wcnss/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
