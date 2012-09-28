@@ -126,6 +126,11 @@ PRODUCT_COPY_FILES += \
 
 # Wifi firmware
 PRODUCT_COPY_FILES += \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b00:/system/etc/firmware/wcnss.b00 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b01:/system/etc/firmware/wcnss.b01 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b02:/system/etc/firmware/wcnss.b02 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.b04:/system/etc/firmware/wcnss.b04 \
+    device/htc/msm8960-common/firmware/wcnss/wcnss.mdt:/system/etc/firmware/wcnss.mdt \
     device/htc/msm8960-common/firmware/wcnss/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     device/htc/msm8960-common/firmware/wcnss/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     device/htc/msm8960-common/firmware/wcnss/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
