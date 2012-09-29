@@ -122,9 +122,9 @@ PRODUCT_COPY_FILES += \
 
 # Wifi firmware
 PRODUCT_COPY_FILES += \
-    device/htc/msm8960-common/firmware/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/htc/msm8960-common/firmware/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    device/htc/msm8960-common/firmware/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    device/htc/msm8960-common/firmware/wcnss/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/htc/msm8960-common/firmware/wcnss/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    device/htc/msm8960-common/firmware/wcnss/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
