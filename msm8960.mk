@@ -128,7 +128,7 @@ PRODUCT_COPY_FILES += \
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
-    debug.composition.type=dyn \
+    debug.composition.type=gpu \
     debug.egl.hw=1 \
     debug.enabletr=true \
     debug.sf.hw=1 \
