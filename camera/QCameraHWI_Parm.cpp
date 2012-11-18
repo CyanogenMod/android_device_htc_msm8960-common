@@ -71,6 +71,9 @@ extern "C" {
 
 #include "QCameraHWI.h"
 
+// Disable exposure and whiteballance locking, it works but never gets disabled and breaks flash
+#define ALLOW_AECAWBLOCK 0
+
 /* QCameraHardwareInterface class implementation goes here*/
 /* following code implements the parameter logic of this class*/
 #define EXPOSURE_COMPENSATION_MAXIMUM_NUMERATOR 12
@@ -1006,13 +1009,13 @@ void QCameraHardwareInterface::initDefaultParameters()
 
     //Set AEC_LOCK
     mParameters.set(CameraParameters::KEY_AUTO_EXPOSURE_LOCK, "false");
-    if(cam_config_is_parm_supported(mCameraId, MM_CAMERA_PARM_AEC_LOCK))
+    if(cam_config_is_parm_supported(mCameraId, MM_CAMERA_PARM_AEC_LOCK) && ALLOW_AECAWBLOCK)
         mParameters.set(CameraParameters::KEY_AUTO_EXPOSURE_LOCK_SUPPORTED, "true");
     else
         mParameters.set(CameraParameters::KEY_AUTO_EXPOSURE_LOCK_SUPPORTED, "false");
     //Set AWB_LOCK
     mParameters.set(CameraParameters::KEY_AUTO_WHITEBALANCE_LOCK, "false");
-    if(cam_config_is_parm_supported(mCameraId, MM_CAMERA_PARM_AWB_LOCK))
+    if(cam_config_is_parm_supported(mCameraId, MM_CAMERA_PARM_AWB_LOCK) && ALLOW_AECAWBLOCK)
         mParameters.set(CameraParameters::KEY_AUTO_WHITEBALANCE_LOCK_SUPPORTED, "true");
     else
         mParameters.set(CameraParameters::KEY_AUTO_WHITEBALANCE_LOCK_SUPPORTED, "false");
