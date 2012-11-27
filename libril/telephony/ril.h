@@ -3798,6 +3798,13 @@ typedef struct {
  */
 #define RIL_UNSOL_VOICE_RADIO_TECH_CHANGED 1035
 
+/**
+ * Custom responses for HTCQualcommRIL.java
+ */
+#define RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE 6002
+#define RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED 21004
+#define RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED 21005
+#define RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED 21007
 
 /***********************************************************************/
 
