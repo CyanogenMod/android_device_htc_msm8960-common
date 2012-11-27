@@ -225,6 +225,7 @@ static int responseSsn(Parcel &p, void *response, size_t responselen);
 static int responseSimStatus(Parcel &p, void *response, size_t responselen);
 static int responseGsmBrSmsCnf(Parcel &p, void *response, size_t responselen);
 static int responseCdmaBrSmsCnf(Parcel &p, void *response, size_t responselen);
+static int responseCdmaERIInfo(Parcel &p, void *response, size_t responselen);
 static int responseCdmaSms(Parcel &p, void *response, size_t responselen);
 static int responseCellList(Parcel &p, void *response, size_t responselen);
 static int responseCdmaInformationRecords(Parcel &p,void *response, size_t responselen);
@@ -1821,6 +1822,32 @@ static void marshallSignalInfoRecord(Parcel &p,
     p.writeInt32(p_signalInfoRecord.signal);
 }
 
+static int responseCdmaERIInfo(Parcel &p,
+            void *response, size_t responselen) {
+    /*
+     * Method from RIL.java
+     * private Object responseCdmaERIInfo(Parcel p)  {
+     * CdmaERIInfo mCdmaERIInfo = new CdmaERIInfo();
+     *
+     * mCdmaERIInfo.carrier_id = p.readInt();
+     * mCdmaERIInfo.eri_id = p.readInt();
+     * mCdmaERIInfo.icon_img_id = p.readInt();
+     * mCdmaERIInfo.param1 = p.readInt();
+     * mCdmaERIInfo.param2 = p.readInt();
+     * mCdmaERIInfo.param3 = p.readInt();
+     * mCdmaERIInfo.param4 = p.readInt();
+     * mCdmaERIInfo.text = p.readString();
+     * mCdmaERIInfo.data_support = p.readInt();
+     *
+     * if (p.dataAvail() > 0)
+     *      localCdmaERIInfo.roaming_type = p.readInt();
+     *
+     * return localCdmaERIInfo;
+     * }
+     */
+     return 0;
+}
+
 static int responseCdmaInformationRecords(Parcel &p,
             void *response, size_t responselen) {
     int num;
@@ -3120,8 +3147,52 @@ void RIL_onUnsolicitedResponse(int unsolResponse, void *data,
 
     if ((unsolResponseIndex < 0)
         || (unsolResponseIndex >= (int32_t)NUM_ELEMS(s_unsolResponses))) {
-        ALOGE("unsupported unsolicited response code %d", unsolResponse);
-        return;
+        /*
+         * catching HTC custom responses and mapping them directly to the ril_unsol_commands array
+         * don't forget to update indices when changing something!
+         *
+         * TODO disable verbose logging here
+         * TODO deck: add your responses
+         */
+        ALOGD("eventually unsupported unsolicited response code %d", unsolResponse);
+        switch (unsolResponse) {
+          case RIL_UNSOL_ENTER_LPM:
+            unsolResponseIndex = 36;
+            ALOGD("supported unsolicited response RIL_UNSOL_ENTER_LPM: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          case RIL_UNSOL_CDMA_3G_INDICATOR:
+            unsolResponseIndex = 37;
+            ALOGD("supported unsolicited response RIL_UNSOL_ENTER_LPM: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR:
+            unsolResponseIndex = 38;
+            ALOGD("supported unsolicited response RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:
+            unsolResponseIndex = 39;
+            ALOGD("supported unsolicited response RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED:
+            unsolResponseIndex = 40;
+            ALOGD("supported unsolicited response RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED:
+            unsolResponseIndex = 41;
+            ALOGD("supported unsolicited response RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED:
+            unsolResponseIndex = 42;
+            ALOGD("supported unsolicited response RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED: %d", s_unsolResponses[unsolResponseIndex].requestNumber);
+            break;
+          default:
+            ALOGE("unsupported unsolicited response code %d", unsolResponse);
+            return;
+        }
+
+    }
+    // TODO disable verbose logging
+    else {
+      ALOGD("supported unsolicited response code %d", unsolResponse);
     }
 
     // Grab a wake lock if needed for this reponse,
@@ -3469,6 +3540,13 @@ requestToString(int request) {
         case RIL_UNSOL_EXIT_EMERGENCY_CALLBACK_MODE: return "UNSOL_EXIT_EMERGENCY_CALLBACK_MODE";
         case RIL_UNSOL_RIL_CONNECTED: return "UNSOL_RIL_CONNECTED";
         case RIL_UNSOL_VOICE_RADIO_TECH_CHANGED: return "UNSOL_VOICE_RADIO_TECH_CHANGED";
+        case RIL_UNSOL_ENTER_LPM: return "UNSOL_ENTER_LPM";
+        case RIL_UNSOL_CDMA_3G_INDICATOR: return "UNSOL_CDMA_3G_INDICATOR";
+        case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: return "UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR";
+        case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: return "UNSOL_RESPONSE_PHONE_MODE_CHANGE";
+        case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: return "UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED";
+        case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED: return "UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED";
+        case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED: return "UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED";
         default: return "<unknown request>";
     }
 }
