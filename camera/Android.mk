@@ -1,4 +1,5 @@
 ifneq ($(USE_CAMERA_STUB),true)
+ifeq ($(BOARD_USES_HTC_CAMERA_HAL),true)
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 
 # When zero we link against libmmcamera; when 1, we dlopen libmmcamera.
@@ -92,4 +93,5 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 endif # BOARD_USES_QCOM_HARDWARE
+endif # BOARD_USES_HTC_CAMERA_HAL
 endif # USE_CAMERA_STUB

@@ -58,8 +58,8 @@ PRODUCT_PACKAGES += \
     libaudioutils
 
 # Camera
-PRODUCT_PACKAGES += \
-    camera.msm8960
+#PRODUCT_PACKAGES += \
+#    camera.msm8960
 
 # Graphics
 PRODUCT_PACKAGES += \
