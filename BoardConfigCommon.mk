@@ -77,6 +77,9 @@ BOARD_EGL_CFG := device/htc/msm8960-common/configs/egl.cfg
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# RIL
+BOARD_RIL_CLASS := "../../../device/htc/msm8960-common/libril/"
+
 # Power
 TARGET_PROVIDES_POWERHAL := true
 
