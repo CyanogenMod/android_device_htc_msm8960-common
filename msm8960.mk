@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Wifi
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
