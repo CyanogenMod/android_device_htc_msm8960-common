@@ -46,30 +46,34 @@ struct msm_rotator_img_info {
  int enable;
  unsigned int downscale_ratio;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ unsigned int secure;
 };
 struct msm_rotator_data_info {
  int session_id;
- struct msmfb_data src;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msmfb_data src;
  struct msmfb_data dst;
  unsigned int version_key;
  struct msmfb_data src_chroma;
- struct msmfb_data dst_chroma;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msmfb_data dst_chroma;
+ struct mdp_buf_fence buf_fence;
 };
 struct msm_rot_clocks {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  const char *clk_name;
  enum rotator_clk_type clk_type;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int clk_rate;
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_rotator_platform_data {
  unsigned int number_of_clocks;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int hardware_version_number;
  struct msm_rot_clocks *rotator_clks;
- const char *regulator_name;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ const char *regulator_name;
+ char rot_iommu_split_domain;
+};
 #endif
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 

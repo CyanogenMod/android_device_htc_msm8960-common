@@ -43,4 +43,3 @@ struct msm_audio_amrnb_enc_config_v2 {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif
-

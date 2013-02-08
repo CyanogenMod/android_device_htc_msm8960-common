@@ -22,9 +22,6 @@
 #include <utils/Errors.h>
 #include <utils/threads.h>
 #include <binder/MemoryHeapPmem.h>
-#ifdef USE_ION
-#include <binder/MemoryHeapIon.h>
-#endif
 #include <utils/String16.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -89,7 +86,7 @@ extern "C" {
 
 //Default FPS
 #define MINIMUM_FPS 5
-#define MAXIMUM_FPS 200
+#define MAXIMUM_FPS 30
 #define DEFAULT_FPS MAXIMUM_FPS
 
 //Default Picture Width
