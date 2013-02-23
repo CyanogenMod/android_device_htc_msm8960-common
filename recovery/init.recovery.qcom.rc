@@ -1,3 +1,5 @@
+import /init.recovery.${ro.product.board}.rc
+
 service choice_fn /sbin/choice_fn
     oneshot
 
