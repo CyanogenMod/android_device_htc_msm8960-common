@@ -27,11 +27,13 @@
     <!-- disable menu hard key in non-pattern lockscreen -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
-    <!-- Component name of the service providing network location support. -->
-    <!-- string name="config_networkLocationProviderPackageName">com.google.android.location.NetworkLocationProvider</string -->
+    <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The standard AOSP fused location provider -->
+        <item>com.android.location.fused</item>
 
-    <!-- Component name of the service providing geocoder API support. -->
-    <!-- string name="config_geocodeProviderPackageName">com.google.android.location.GeocodeProvider</string -->
+        <!-- The Google Network Location Services location provider -->
+        <item>com.google.android.location</item>
+    </string-array>
 
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
