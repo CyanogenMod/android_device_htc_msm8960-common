@@ -97,7 +97,8 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_RIL_CLASS := "../../../device/htc/msm8960-common/libril/"
 
 # Time
-KERNEL_HAS_GETTIMEOFDAY_HELPER := true
+# temp remove - causing issues with short/long presses
+# KERNEL_HAS_GETTIMEOFDAY_HELPER := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
