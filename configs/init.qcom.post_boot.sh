@@ -27,6 +27,8 @@
 #
 
 target=`getprop ro.board.platform`
+cpuspeed=`getprop ro.cpu.default_clock`
+
 case "$target" in
     "msm7201a_ffa" | "msm7201a_surf" | "msm7627_ffa" | "msm7627_surf" | "msm7627a" | \
     "qsd8250_surf" | "qsd8250_ffa" | "msm7630_surf" | "msm7630_1x" | "msm7630_fusion" | "qsd8650a_st1x")
@@ -106,6 +108,10 @@ case "$target" in
      echo 10 > /sys/devices/system/cpu/cpufreq/ondemand/down_differential
      echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
      echo 384000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+     if [ ! -z "${cpuspeed##*[!0-9]*}" ]; then
+        echo $cpuspeed > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+        echo $cpuspeed > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+     fi
      chown system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
      chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
      chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
