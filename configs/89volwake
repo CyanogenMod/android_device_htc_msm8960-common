@@ -1,0 +1,4 @@
+#!/system/bin/sh
+
+echo 1 > /sys/keyboard/vol_wakeup
+

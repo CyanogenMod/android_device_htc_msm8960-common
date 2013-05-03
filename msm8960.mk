@@ -52,6 +52,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.compass.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
+# Wake-on-Volume
+PRODUCT_COPY_FILES += \
+    device/htc/msm8960-common/configs/89volwake:/system/etc/init.d/89volwake
+
 # Audio
 PRODUCT_PACKAGES += \
     alsa.msm8960 \
