@@ -16,8 +16,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_VENDOR),htc)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
+ifneq ($(filter jewel evita ville fireball,$(TARGET_DEVICE)),)
+
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+
 endif
