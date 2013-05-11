@@ -1,0 +1,8 @@
+Change-Id: I8690a0ea2eea2e43410661e88ca583c6beb29274
+Code-Review+2: Daniel Hillenbrand <codeworkx@cyanogenmod.org>
+Verified+1: Daniel Hillenbrand <codeworkx@cyanogenmod.org>
+Submitted-by: Daniel Hillenbrand <codeworkx@cyanogenmod.org>
+Submitted-at: Fri, 10 May 2013 23:53:15 -0700
+Reviewed-on: http://review.cyanogenmod.org/37413
+Project: CyanogenMod/android_device_htc_msm8960-common
+Branch: refs/heads/cm-10.1
