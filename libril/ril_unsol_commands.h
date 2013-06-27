@@ -54,7 +54,7 @@
     {RIL_UNSOL_CDMA_3G_INDICATOR, responseInts, WAKE_PARTIAL},                    // s_unsolResponses[37]: 3009
     {RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR, responseCdmaERIInfo, WAKE_PARTIAL},// s_unsolResponses[38]: 3012
     {RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL, responseStrings, WAKE_PARTIAL},   // s_unsolResponses[39]: 3020
-    {RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE, responseInts, WAKE_PARTIAL},           // s_unsolResponses[40]: 6002
+    {RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE, responseInts, WAKE_PARTIAL},           // s_unsolResponses[40]: 4802,6002
     {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},    // s_unsolResponses[41]: 21004
     {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},   // s_unsolResponses[42]: 21005
     {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},  // s_unsolResponses[43]: 21007

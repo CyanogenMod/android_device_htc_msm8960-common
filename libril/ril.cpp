@@ -3191,6 +3191,7 @@ void RIL_onUnsolicitedResponse(int unsolResponse, void *data,
           case RIL_UNSOL_CDMA_3G_INDICATOR: unsolResponseIndex = 37; break;
           case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: unsolResponseIndex = 38; break;
           case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL: unsolResponseIndex = 39; break;
+          case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7: unsolResponseIndex = 40; break; // yes, it has the same index
           case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: unsolResponseIndex = 40; break;
           case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: unsolResponseIndex = 41; break;
           case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED: unsolResponseIndex = 42; break;
