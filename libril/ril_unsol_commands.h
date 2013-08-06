@@ -50,6 +50,7 @@
     {RIL_UNSOL_EXIT_EMERGENCY_CALLBACK_MODE, responseVoid, WAKE_PARTIAL},
     {RIL_UNSOL_RIL_CONNECTED, responseInts, WAKE_PARTIAL},
     {RIL_UNSOL_VOICE_RADIO_TECH_CHANGED, responseInts, WAKE_PARTIAL},
+    {RIL_UNSOL_CELL_INFO_LIST, responseCellInfoList, WAKE_PARTIAL},
     {RIL_UNSOL_ENTER_LPM, responseVoid, WAKE_PARTIAL},                            // s_unsolResponses[36]: 1523
     {RIL_UNSOL_CDMA_3G_INDICATOR, responseInts, WAKE_PARTIAL},                    // s_unsolResponses[37]: 3009
     {RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR, responseCdmaERIInfo, WAKE_PARTIAL},// s_unsolResponses[38]: 3012
