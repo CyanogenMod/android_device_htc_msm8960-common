@@ -53,6 +53,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8960
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8960
