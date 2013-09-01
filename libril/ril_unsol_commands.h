@@ -59,3 +59,4 @@
     {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},    // s_unsolResponses[42]: 21004
     {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},   // s_unsolResponses[43]: 21005
     {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},  // s_unsolResponses[44]: 21007
+    {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7, responseVoid, WAKE_PARTIAL},  // mapped to s_unsolResponses[44]: 5757
