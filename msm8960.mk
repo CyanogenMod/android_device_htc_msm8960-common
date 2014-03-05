@@ -96,6 +96,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
+# Common overlays
+PRODUCT_PACKAGE_OVERLAYS += device/htc/msm8960-common/overlay
+
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
