@@ -99,7 +99,3 @@ BOARD_SEPOLICY_UNION += \
     ueventd.te \
     wpa_socket.te \
     wpa.te
-
-# Webkit
-ENABLE_WEBGL := true
-TARGET_FORCE_CPU_UPLOAD := true
