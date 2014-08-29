@@ -84,10 +84,6 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
-# WPA supplicant config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
 # Media config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
