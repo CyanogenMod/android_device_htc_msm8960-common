@@ -8,6 +8,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     qcom.hw.aac.encoder=true \
     ro.qc.sdk.audio.fluencetype=fluence \
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=dyn \
