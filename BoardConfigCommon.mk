@@ -70,29 +70,3 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/htc/msm8960-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file_contexts \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init_shell.te \
-    init.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa_socket.te \
-    wpa.te
