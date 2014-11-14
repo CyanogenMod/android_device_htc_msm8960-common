@@ -12,6 +12,7 @@ LOCAL_SRC_FILES:= \
     ril_event.cpp
 
 LOCAL_SHARED_LIBRARIES := \
+    liblog \
     libutils \
     libbinder \
     libcutils \
@@ -29,8 +30,6 @@ LOCAL_CFLAGS += -DRIL_FIVE_SEARCH_RESPONSES
 endif
 
 LOCAL_MODULE:= libril
-
-LOCAL_LDLIBS += -lpthread
 
 include $(BUILD_SHARED_LIBRARY)
 

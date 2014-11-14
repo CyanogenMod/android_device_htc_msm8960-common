@@ -1,7 +1,5 @@
 /* //device/libs/telephony/ril_unsol_commands.h
 **
-** Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
-** Not a Contribution
 ** Copyright 2006, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +16,7 @@
 */
     {RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED, responseVoid, WAKE_PARTIAL},
     {RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED, responseVoid, WAKE_PARTIAL},
-    {RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},// s_unsolResponses[2]: 2,4802
+    {RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL}, // s_unsolResponses[2]: 2,4802
     {RIL_UNSOL_RESPONSE_NEW_SMS, responseString, WAKE_PARTIAL},
     {RIL_UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT, responseString, WAKE_PARTIAL},
     {RIL_UNSOL_RESPONSE_NEW_SMS_ON_SIM, responseInts, WAKE_PARTIAL},
@@ -56,9 +54,10 @@
     {RIL_UNSOL_CELL_INFO_LIST, responseCellInfoList, WAKE_PARTIAL},
 #endif
     {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},
-    {RIL_UNSOL_ON_SS, responseSSData, WAKE_PARTIAL},
-    {RIL_UNSOL_STK_CC_ALPHA_NOTIFY, responseString, WAKE_PARTIAL},
     {RIL_UNSOL_UICC_SUBSCRIPTION_STATUS_CHANGED, responseInts, WAKE_PARTIAL},
+    {RIL_UNSOL_SRVCC_STATE_NOTIFY, responseInts, WAKE_PARTIAL},
+    {RIL_UNSOL_HARDWARE_CONFIG_CHANGED, responseHardwareConfig, WAKE_PARTIAL},
+    {RIL_UNSOL_DC_RT_INFO_CHANGED, responseDcRtInfo, WAKE_PARTIAL},
     {RIL_UNSOL_ENTER_LPM, responseVoid, WAKE_PARTIAL},                            // s_unsolResponses[41]: 1523
     {RIL_UNSOL_CDMA_3G_INDICATOR, responseInts, WAKE_PARTIAL},                    // s_unsolResponses[42]: 3009
     {RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR, responseCdmaERIInfo, WAKE_PARTIAL},// s_unsolResponses[43]: 3012
