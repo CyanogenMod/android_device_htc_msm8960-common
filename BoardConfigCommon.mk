@@ -74,3 +74,25 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/htc/msm8960-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	device.te \
+	file.te \
+	file_contexts \
+	mediaserver.te \
+	mm-qcamerad.te \
+	mpdecision.te \
+	netmgrd.te \
+	qmuxd.te \
+	rmt_storage.te \
+	surfaceflinger.te \
+	system_server.te \
+	thermal-engine.te \
+	ueventd.te \
+	vold.te \
+	wpa.te
+
