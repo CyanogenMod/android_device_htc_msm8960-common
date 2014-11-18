@@ -1,0 +1,10 @@
+/dev/kgsl-2d[01]                                u:object_r:gpu_device:s0
+/dev/msm_rotator                                u:object_r:gpu_device:s0
+/dev/lightsensor                                u:object_r:sensors_device:s0
+/dev/cm3602					u:object_r:sensors_device:s0
+/dev/ewtzmu2.*					u:object_r:sensors_device:s0
+/dev/akm8975.*					u:object_r:sensors_device:s0
+/dev/rawchip.*					u:object_r:camera_device:s0
+/dev/block/mmcblk0p(.*)                         u:object_r:mmc_block_device:s0
+/dev/socket/mpctl				u:object_r:mpctl_socket:s0
+/data/cam.*                                                  u:object_r:camera_socket:s0
