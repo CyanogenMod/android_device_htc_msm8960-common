@@ -62,11 +62,11 @@ QCOM_FLUENCE_ENABLED := false
 BOARD_HAVE_BLUETOOTH := true
 
 # Graphics
-USE_OPENGL_RENDERER := true
+BOARD_EGL_CFG := device/htc/msm8960-common/configs/egl.cfg
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-BOARD_EGL_CFG := device/htc/msm8960-common/configs/egl.cfg
+USE_OPENGL_RENDERER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
