@@ -91,10 +91,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8960
 
-# QRNGD
-PRODUCT_PACKAGES += \
-    qrngd
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
