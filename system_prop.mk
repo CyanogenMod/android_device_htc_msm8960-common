@@ -15,10 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     persist.hwc.mdpcomp.enable=true
 
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.use-awesome=true
-
 # Thermal
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.thermal.monitor=true
