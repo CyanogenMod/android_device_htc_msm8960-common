@@ -1,6 +1,5 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true \
     persist.audio.fluence.mode=endfire \
     persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
