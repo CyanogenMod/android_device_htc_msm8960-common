@@ -101,4 +101,5 @@ BOARD_SEPOLICY_UNION += \
     system.te \
     ueventd.te \
     wpa_socket.te \
-    wpa.te
+    wpa.te \
+    zygote.te
