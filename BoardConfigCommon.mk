@@ -58,6 +58,9 @@ BOARD_USES_LEGACY_ALSA_AUDIO := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
+# Use dlmalloc instead of jemalloc for mallocs
+MALLOC_IMPL := dlmalloc
+
 # Graphics
 BOARD_EGL_CFG := device/htc/msm8960-common/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
