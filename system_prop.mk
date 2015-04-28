@@ -1,6 +1,5 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true \
     persist.audio.fluence.mode=endfire \
     persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
@@ -19,10 +18,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
     debug.sf.hw=1 \
     persist.hwc.mdpcomp.enable=true
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.media.use-awesome=true
 
 # Thermal
 PRODUCT_PROPERTY_OVERRIDES += \
