@@ -62,7 +62,6 @@ BOARD_HAVE_BLUETOOTH := true
 MALLOC_IMPL := dlmalloc
 
 # Graphics
-BOARD_EGL_CFG := device/htc/msm8960-common/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
