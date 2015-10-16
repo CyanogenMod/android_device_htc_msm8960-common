@@ -1,7 +1,5 @@
 /* //device/libs/telephony/ril_commands.h
 **
-** Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
-** Not a Contribution
 ** Copyright 2006, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +32,7 @@
     {RIL_REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE, dispatchVoid, responseVoid},
     {RIL_REQUEST_CONFERENCE, dispatchVoid, responseVoid},
     {RIL_REQUEST_UDUB, dispatchVoid, responseVoid},
-    {RIL_REQUEST_LAST_CALL_FAIL_CAUSE, dispatchVoid, responseInts},
+    {RIL_REQUEST_LAST_CALL_FAIL_CAUSE, dispatchVoid, responseFailCause},
     {RIL_REQUEST_SIGNAL_STRENGTH, dispatchVoid, responseRilSignalStrength},
     {RIL_REQUEST_VOICE_REGISTRATION_STATE, dispatchVoid, responseStrings},
     {RIL_REQUEST_DATA_REGISTRATION_STATE, dispatchVoid, responseStrings},
@@ -148,3 +146,9 @@
     {RIL_REQUEST_SET_DC_RT_INFO_RATE, dispatchInts, responseVoid},
     {RIL_REQUEST_SET_DATA_PROFILE, dispatchDataProfile, responseVoid},
     {RIL_REQUEST_SHUTDOWN, dispatchVoid, responseVoid},
+    {RIL_REQUEST_GET_RADIO_CAPABILITY, dispatchVoid, responseRadioCapability},
+    {RIL_REQUEST_SET_RADIO_CAPABILITY, dispatchRadioCapability, responseRadioCapability},
+    {RIL_REQUEST_START_LCE, dispatchInts, responseLceStatus},
+    {RIL_REQUEST_STOP_LCE, dispatchVoid, responseLceStatus},
+    {RIL_REQUEST_PULL_LCEDATA, dispatchVoid, responseLceData},
+    {RIL_REQUEST_GET_ACTIVITY_INFO, dispatchVoid, responseActivityData},
