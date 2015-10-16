@@ -1,7 +1,5 @@
 /* //device/libs/telephony/ril_unsol_commands.h
 **
-** Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
-** Not a Contribution
 ** Copyright 2006, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,11 +61,12 @@
     {RIL_UNSOL_RADIO_CAPABILITY, responseRadioCapability, WAKE_PARTIAL},
     {RIL_UNSOL_ON_SS, responseSSData, WAKE_PARTIAL},
     {RIL_UNSOL_STK_CC_ALPHA_NOTIFY, responseString, WAKE_PARTIAL},
-    {RIL_UNSOL_ENTER_LPM, responseVoid, WAKE_PARTIAL},                            // s_unsolResponses[45]: 1523
-    {RIL_UNSOL_CDMA_3G_INDICATOR, responseInts, WAKE_PARTIAL},                    // s_unsolResponses[46]: 3009
-    {RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR, responseCdmaERIInfo, WAKE_PARTIAL},// s_unsolResponses[47]: 3012
-    {RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL, responseStrings, WAKE_PARTIAL},   // s_unsolResponses[48]: 3020
-    {RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE, responseInts, WAKE_PARTIAL},           // s_unsolResponses[49]: 6002
-    {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},    // s_unsolResponses[50]: 21004
-    {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC, responseVoid, WAKE_PARTIAL},   // s_unsolResponses[51]: 21005
-    {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseDataCallList, WAKE_PARTIAL},  // s_unsolResponses[52]: 21007
+    {RIL_UNSOL_LCEDATA_RECV, responseLceData, WAKE_PARTIAL},
+    {RIL_UNSOL_ENTER_LPM, responseVoid, WAKE_PARTIAL},                            // s_unsolResponses[46]: 1523
+    {RIL_UNSOL_CDMA_3G_INDICATOR, responseInts, WAKE_PARTIAL},                    // s_unsolResponses[47]: 3009
+    {RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR, responseCdmaERIInfo, WAKE_PARTIAL},// s_unsolResponses[48]: 3012
+    {RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL, responseStrings, WAKE_PARTIAL},   // s_unsolResponses[49]: 3020
+    {RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE, responseInts, WAKE_PARTIAL},           // s_unsolResponses[50]: 6002
+    {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},    // s_unsolResponses[51]: 21004
+    {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC, responseVoid, WAKE_PARTIAL},   // s_unsolResponses[52]: 21005
+    {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseDataCallList, WAKE_PARTIAL},  // s_unsolResponses[53]: 21007
