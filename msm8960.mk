@@ -55,6 +55,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     make_ext4fs
 
+# HTC symbols
+PRODUCT_PACKAGES += \
+    libhtc_symbols
+
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
