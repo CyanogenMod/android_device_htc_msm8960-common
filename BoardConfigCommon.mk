@@ -64,8 +64,8 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
-# Libc extensions
-BOARD_PROVIDES_ADDITIONAL_BIONIC_STATIC_LIBS += libc_htc_symbols
+# Liblog extensions
+BOARD_PROVIDES_LOG_STATIC_LIBS += libc_htc_symbols
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
