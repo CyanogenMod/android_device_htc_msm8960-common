@@ -91,6 +91,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8960
 
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
