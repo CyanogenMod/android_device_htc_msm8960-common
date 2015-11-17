@@ -57,9 +57,6 @@ BOARD_USES_LEGACY_ALSA_AUDIO := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
-# Use dlmalloc instead of jemalloc for mallocs
-MALLOC_IMPL := dlmalloc
-
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
