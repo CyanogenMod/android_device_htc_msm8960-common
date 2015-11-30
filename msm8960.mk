@@ -51,10 +51,6 @@ PRODUCT_PACKAGES += \
     libgenlock \
     memtrack.msm8960
 
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    make_ext4fs
-
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
@@ -90,10 +86,6 @@ PRODUCT_BOOT_JARS += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8960
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
 
 # WiFi
 PRODUCT_PACKAGES += \
