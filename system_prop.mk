@@ -10,6 +10,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     persist.hwc.mdpcomp.enable=true
 
+# Log
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=true
+
 # Thermal
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.thermal.monitor=true
