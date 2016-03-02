@@ -83,7 +83,6 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     hostapd.accept \
     hostapd.deny \
