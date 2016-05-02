@@ -41,12 +41,6 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 
-# Flags
-COMMON_GLOBAL_CFLAGS += -DHTCLOG
-
-# Fonts
-EXTENDED_FONT_FOOTPRINT := true
-
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
