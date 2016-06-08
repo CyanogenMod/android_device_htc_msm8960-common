@@ -4892,8 +4892,7 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
                 unsolResponse = RIL_UNSOL_CDMA_3G_INDICATOR;
                 break;
             case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
-                unsolResponse = RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED;
-                unsolResponseIndex = 2;
+                unsolResponse = RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE;
                 break;
             case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7:
                 unsolResponse = RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED;
@@ -5269,7 +5268,6 @@ requestToString(int request) {
         case RIL_REQUEST_SET_DATA_PROFILE: return "SET_DATA_PROFILE";
         case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: return "UNSOL_RESPONSE_RADIO_STATE_CHANGED";
         case RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED: return "UNSOL_RESPONSE_CALL_STATE_CHANGED";
-        case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
         case RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED: return "UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED";
         case RIL_UNSOL_RESPONSE_NEW_SMS: return "UNSOL_RESPONSE_NEW_SMS";
         case RIL_UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT: return "UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT";
