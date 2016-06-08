@@ -4892,8 +4892,7 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
                 unsolResponse = RIL_UNSOL_CDMA_3G_INDICATOR;
                 break;
             case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
-                unsolResponse = RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED;
-                unsolResponseIndex = 2;
+                unsolResponse = RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE;
                 break;
             case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7:
                 unsolResponse = RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED;
@@ -4916,19 +4915,18 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
             case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL:
                 unsolResponseIndex = htc_base + 3;
                 break;
-            case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:
+            case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED:
                 unsolResponseIndex = htc_base + 4;
                 break;
-            case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED:
+            case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC:
                 unsolResponseIndex = htc_base + 5;
                 break;
-            case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC:
+            case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED:
                 unsolResponseIndex = htc_base + 6;
                 break;
-            case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED:
-                unsolResponseIndex = htc_base + 7;
-                break;
-            case RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED:
+            case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:
+                unsolResponse = RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED;
+                unsolResponseIndex = 2;
                 break;
             default:
                 RLOGE("unsupported unsolicited response code %d", unsolResponse);
@@ -5269,6 +5267,7 @@ requestToString(int request) {
         case RIL_REQUEST_SET_DATA_PROFILE: return "SET_DATA_PROFILE";
         case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: return "UNSOL_RESPONSE_RADIO_STATE_CHANGED";
         case RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED: return "UNSOL_RESPONSE_CALL_STATE_CHANGED";
+        case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:
         case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
         case RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED: return "UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED";
         case RIL_UNSOL_RESPONSE_NEW_SMS: return "UNSOL_RESPONSE_NEW_SMS";

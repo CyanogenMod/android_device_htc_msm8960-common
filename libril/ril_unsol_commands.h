@@ -16,7 +16,7 @@
 */
     {RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED, responseVoid, WAKE_PARTIAL},
     {RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED, responseVoid, WAKE_PARTIAL},
-    {RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL},// s_unsolResponses[2]: 2,4802
+    {RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED, responseVoid, WAKE_PARTIAL}, // s_unsolResponses[2]: 1002 (std) / 6002 (s4) / 4802 (m7)
     {RIL_UNSOL_RESPONSE_NEW_SMS, responseString, WAKE_PARTIAL},
     {RIL_UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT, responseString, WAKE_PARTIAL},
     {RIL_UNSOL_RESPONSE_NEW_SMS_ON_SIM, responseInts, WAKE_PARTIAL},
@@ -64,7 +64,6 @@
     {RIL_UNSOL_CDMA_3G_INDICATOR, responseInts, WAKE_PARTIAL},                            // s_unsolResponses[47]: 3009 (s4) / 4259 (m7)
     {RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR, responseCdmaERIInfo, WAKE_PARTIAL},        // s_unsolResponses[48]: 3012
     {RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL, responseStrings, WAKE_PARTIAL},           // s_unsolResponses[49]: 3020
-    {RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE, responseInts, WAKE_PARTIAL},                   // s_unsolResponses[50]: 6002 (s4) / 4802 (m7)
-    {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},            // s_unsolResponses[51]: 21004
-    {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC, responseVoid, WAKE_PARTIAL},       // s_unsolResponses[52]: 21005
-    {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseDataCallList, WAKE_PARTIAL},  // s_unsolResponses[53]: 21007 (s4) / 5757 (m7)
+    {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},            // s_unsolResponses[50]: 21004
+    {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC, responseVoid, WAKE_PARTIAL},       // s_unsolResponses[51]: 21005
+    {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseDataCallList, WAKE_PARTIAL},  // s_unsolResponses[52]: 21007 (s4) / 5757 (m7)
