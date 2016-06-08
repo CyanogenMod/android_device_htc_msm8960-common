@@ -4880,40 +4880,60 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
     unsolResponseIndex = unsolResponse - RIL_UNSOL_RESPONSE_BASE;
 
     if ((unsolResponseIndex < 0)
-        || (unsolResponseIndex >= (int32_t)NUM_ELEMS(s_unsolResponses))) {
+            || (unsolResponseIndex >= (int32_t)NUM_ELEMS(s_unsolResponses))) {
         /*
          * catching HTC custom responses and mapping them directly to the ril_unsol_commands array
          * before giving up on an unsupported response
          *
          * don't forget to update indices when changing something!
          */
-        int htc_base = 46;
         switch (unsolResponse) {
-          case RIL_UNSOL_ENTER_LPM: unsolResponseIndex = htc_base + 0; break;
-          case RIL_UNSOL_CDMA_3G_INDICATOR_M7:
-            // remap to RIL_UNSOL_CDMA_3G_INDICATOR
-            RLOGD("m7 supported unsolicited response code %d", unsolResponse);
-            unsolResponse = RIL_UNSOL_CDMA_3G_INDICATOR;
-          case RIL_UNSOL_CDMA_3G_INDICATOR: unsolResponseIndex = htc_base + 1; break;
-          case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: unsolResponseIndex = htc_base + 2; break;
-          case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL: unsolResponseIndex = htc_base + 3; break;
-          case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: unsolResponseIndex = htc_base + 4; break;
-          case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: unsolResponseIndex = htc_base + 5; break;
-          case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC: unsolResponseIndex = htc_base + 6; break;
-          case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7:
-            // remap to RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED
-            RLOGD("m7 supported unsolicited response code %d", unsolResponse);
-            unsolResponse = RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED;
-          case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED: unsolResponseIndex = htc_base + 7; break;
-          case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
-            // remap to RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED
-            RLOGD("m7 supported unsolicited response code %d", unsolResponse);
-            unsolResponse = RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED;
-            unsolResponseIndex = 2;
-            break;
-          default: RLOGE("unsupported unsolicited response code %d", unsolResponse); return;
+            case RIL_UNSOL_CDMA_3G_INDICATOR_M7:
+                unsolResponse = RIL_UNSOL_CDMA_3G_INDICATOR;
+                break;
+            case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
+                unsolResponse = RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED;
+                unsolResponseIndex = 2;
+                break;
+            case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7:
+                unsolResponse = RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED;
+                break;
+            default:
+                break;
         }
 
+        int htc_base = 46;
+        switch (unsolResponse) {
+            case RIL_UNSOL_ENTER_LPM:
+                unsolResponseIndex = htc_base + 0;
+                break;
+            case RIL_UNSOL_CDMA_3G_INDICATOR:
+                unsolResponseIndex = htc_base + 1;
+                break;
+            case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR:
+                unsolResponseIndex = htc_base + 2;
+                break;
+            case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL:
+                unsolResponseIndex = htc_base + 3;
+                break;
+            case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:
+                unsolResponseIndex = htc_base + 4;
+                break;
+            case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED:
+                unsolResponseIndex = htc_base + 5;
+                break;
+            case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC:
+                unsolResponseIndex = htc_base + 6;
+                break;
+            case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED:
+                unsolResponseIndex = htc_base + 7;
+                break;
+            case RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED:
+                break;
+            default:
+                RLOGE("unsupported unsolicited response code %d", unsolResponse);
+                return;
+        }
     }
 
     // Grab a wake lock if needed for this reponse,
