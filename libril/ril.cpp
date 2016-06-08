@@ -4888,8 +4888,17 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
          * don't forget to update indices when changing something!
          */
         switch (unsolResponse) {
+            case RIL_UNSOL_ENTER_LPM_M7:
+                unsolResponse = RIL_UNSOL_ENTER_LPM;
+                break;
             case RIL_UNSOL_CDMA_3G_INDICATOR_M7:
                 unsolResponse = RIL_UNSOL_CDMA_3G_INDICATOR;
+                break;
+            case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR_M7:
+                unsolResponse = RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR;
+                break;
+            case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL_M7:
+                unsolResponse = RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL;
                 break;
             case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
                 unsolResponse = RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE;
@@ -4926,6 +4935,12 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
                 break;
             case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED:
                 unsolResponseIndex = htc_base + 7;
+                break;
+            case RIL_UNSOL_SECTOR_ID_IND:
+                unsolResponseIndex = htc_base + 8;
+                break;
+            case RIL_UNSOL_TPMR_ID:
+                unsolResponseIndex = htc_base + 9;
                 break;
             case RIL_UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED:
                 break;

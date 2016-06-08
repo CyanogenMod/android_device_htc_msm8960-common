@@ -68,3 +68,5 @@
     {RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED, responseVoid, WAKE_PARTIAL},            // s_unsolResponses[51]: 21004
     {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC, responseVoid, WAKE_PARTIAL},       // s_unsolResponses[52]: 21005
     {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseDataCallList, WAKE_PARTIAL},  // s_unsolResponses[53]: 21007 (s4) / 5757 (m7)
+    {RIL_UNSOL_SECTOR_ID_IND, responseString, WAKE_PARTIAL},                              // s_unsolResponses[54]: 3057 (m7)
+    {RIL_UNSOL_TPMR_ID, responseInts, WAKE_PARTIAL},                                      // s_unsolResponses[55]: 3024 (m7)
