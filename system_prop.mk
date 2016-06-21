@@ -1,12 +1,3 @@
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.fluence.mode=endfire \
-    persist.audio.vr.enable=false \
-    persist.audio.handset.mic=digital \
-    persist.audio.speaker.location=high \
-    qcom.hw.aac.encoder=true \
-    ro.qc.sdk.audio.fluencetype=fluence \
-
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
