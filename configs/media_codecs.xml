@@ -18,6 +18,13 @@
 -->
 
 <MediaCodecs>
+    <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_telephony.xml" />
+
+    <Settings>
+        <Setting name="max-video-encoder-input-buffers" value="9" />
+    </Settings>
+
     <Encoders>
         <MediaCodec name="OMX.qcom.audio.encoder.evrc" type="audio/evrc" >
             <Quirk name="requires-allocate-on-input-ports" />
@@ -108,8 +115,6 @@
             <Feature name="adaptive-playback" />
         </MediaCodec>
     </Decoders>
-    <Include href="media_codecs_google_audio.xml" />
-    <Include href="media_codecs_google_telephony.xml" />
     <Include href="media_codecs_google_video.xml" />
     <Include href="media_codecs_ffmpeg.xml" />
 </MediaCodecs>
