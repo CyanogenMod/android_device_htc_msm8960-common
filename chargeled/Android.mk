@@ -17,7 +17,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := chargeled.c
+LOCAL_SRC_FILES := chargeled.cpp
 
 LOCAL_CFLAGS += -Wall
 
