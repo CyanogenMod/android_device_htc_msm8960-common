@@ -1644,6 +1644,8 @@ static void dispatchDataCall(Parcel& p, RequestInfo *pRI) {
 // When all RILs handle this request, this function can be removed and
 // the request can be sent directly to the RIL using dispatchVoid.
 static void dispatchVoiceRadioTech(Parcel& p, RequestInfo *pRI) {
+    char lteOnCdmaDevice[PROPERTY_VALUE_MAX];
+
     RIL_RadioState state = CALL_ONSTATEREQUEST((RIL_SOCKET_ID)pRI->socket_id);
 
     if ((RADIO_STATE_UNAVAILABLE == state) || (RADIO_STATE_OFF == state)) {
@@ -1652,7 +1654,15 @@ static void dispatchVoiceRadioTech(Parcel& p, RequestInfo *pRI) {
 
     // RILs that support RADIO_STATE_ON should support this request.
     if (RADIO_STATE_ON == state) {
-        dispatchVoid(p, pRI);
+        property_get("telephony.lteOnCdmaDevice", lteOnCdmaDevice, "0");
+        if (!strcmp(lteOnCdmaDevice, "1")) {
+            RLOGD("dispatchVoiceRadioTech: lteOnCdmaDevice, forcing RADIO_TECH_1xRTT");
+            voiceRadioTech = RADIO_TECH_1xRTT;
+            RIL_onRequestComplete(pRI, RIL_E_SUCCESS, &voiceRadioTech,
+                                  sizeof(int));
+        } else {
+            dispatchVoid(p, pRI);
+        }
         return;
     }
 
