@@ -1644,8 +1644,6 @@ static void dispatchDataCall(Parcel& p, RequestInfo *pRI) {
 // When all RILs handle this request, this function can be removed and
 // the request can be sent directly to the RIL using dispatchVoid.
 static void dispatchVoiceRadioTech(Parcel& p, RequestInfo *pRI) {
-    char lteOnCdmaDevice[PROPERTY_VALUE_MAX];
-
     RIL_RadioState state = CALL_ONSTATEREQUEST((RIL_SOCKET_ID)pRI->socket_id);
 
     if ((RADIO_STATE_UNAVAILABLE == state) || (RADIO_STATE_OFF == state)) {
